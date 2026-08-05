@@ -1,0 +1,90 @@
+attribute_means:
+  aet_mm_syr: 1015.4529035146667
+  area: 29802.605282711535
+  ari_ix_sav: 80.56023507673332
+  aridity_ERA5_LAND: 2.8792628613333333
+  dis_m3_pyr: 252.60416666666666
+  ele_mt_sav: 548.8977086263334
+  gwt_cm_sav: 275.24399328633336
+  high_prec_dur: 1.5887601193333334
+  high_prec_freq: 0.044999771800000005
+  inu_pc_smx: 0.7097410740600001
+  low_prec_dur: 7.4577237086666655
+  low_prec_freq: 0.5810294348666667
+  moisture_index_ERA5_LAND: -0.5782742416000001
+  p_mean: 3.266180897333333
+  pet_mean_ERA5_LAND: 9.169955695333334
+  pet_mm_syr: 1654.02907644
+  pre_mm_syr: 1307.8711745806668
+  rev_mc_usu: 1738.2933333333333
+  run_mm_syr: 399.9220765495333
+  seasonality_ERA5_LAND: 0.9608294618000002
+  sgr_dk_sav: 70.17411974913333
+  slp_dg_sav: 57.92959347578001
+  tmp_dc_syr: 231.80745258266663
+attribute_stds:
+  aet_mm_syr: 118.83573662121293
+  area: 79209.08510338812
+  ari_ix_sav: 23.607062384012334
+  aridity_ERA5_LAND: 1.2804714765322376
+  dis_m3_pyr: 594.5671026376631
+  ele_mt_sav: 258.54088010171955
+  gwt_cm_sav: 119.76778467592467
+  high_prec_dur: 0.23492186189875777
+  high_prec_freq: 0.012127062395921843
+  inu_pc_smx: 1.8465547041208177
+  low_prec_dur: 2.8683673430956413
+  low_prec_freq: 0.09522562549398145
+  moisture_index_ERA5_LAND: 0.10756810898590834
+  p_mean: 0.5639192348925299
+  pet_mean_ERA5_LAND: 3.6663431727733005
+  pet_mm_syr: 146.3348214540224
+  pre_mm_syr: 300.98113475097534
+  rev_mc_usu: 5826.641330007018
+  run_mm_syr: 214.51693068302214
+  seasonality_ERA5_LAND: 0.2934381240704795
+  sgr_dk_sav: 35.97027205385022
+  slp_dg_sav: 40.36038530103454
+  tmp_dc_syr: 19.064724660972843
+xarray_feature_scale:
+  coords: {}
+  attrs: {}
+  dims: {}
+  data_vars:
+    potential_evaporation_sum_ERA5_LAND:
+      dims: []
+      attrs: {}
+      data: 5.296847820281982
+    streamflow:
+      dims: []
+      attrs: {}
+      data: 3.1099069118499756
+    temperature_2m_mean:
+      dims: []
+      attrs: {}
+      data: 3.0009467601776123
+    total_precipitation_sum:
+      dims: []
+      attrs: {}
+      data: 6.567934989929199
+xarray_feature_center:
+  coords: {}
+  attrs: {}
+  dims: {}
+  data_vars:
+    potential_evaporation_sum_ERA5_LAND:
+      dims: []
+      attrs: {}
+      data: 9.167766571044922
+    streamflow:
+      dims: []
+      attrs: {}
+      data: 0.9762513637542725
+    temperature_2m_mean:
+      dims: []
+      attrs: {}
+      data: 23.17794418334961
+    total_precipitation_sum:
+      dims: []
+      attrs: {}
+      data: 3.2960126399993896

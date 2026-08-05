@@ -1,0 +1,94 @@
+batch_size: 128
+cache_validation_data: true
+clip_gradient_norm: 1
+clip_targets_to_zero:
+- streamflow
+commit_hash:
+data_dir: /content/drive/MyDrive/DeepLearning/PhD/Data/caravan_150basins
+dataset: generic
+device: cuda:0
+dynamic_inputs:
+- total_precipitation_sum
+- temperature_2m_mean
+- potential_evaporation_sum_ERA5_LAND
+dynamic_learning_rate: true
+early_stopping: true
+epochs: 100
+experiment_name: LSTM
+factor_dynamic_learning_rate: 0.5
+forecast_seq_length: 5
+head: regression
+hidden_size: 256
+img_log_dir: 
+  /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/runs/LSTM_0104_080233/img_log
+initial_forget_bias: 3
+learning_rate: 0.0003
+log_interval: 5
+log_n_figures: 1
+log_tensorboard: true
+loss: MSE
+metrics:
+- NSE
+- KGE
+- RMSE
+- Pearson-r
+- FHV
+- FLV
+minimum_epochs_before_early_stopping: 20
+model: cudalstm
+num_workers: 8
+number_of_basins: 150
+optimizer: Adam
+output_activation: linear
+output_dropout: 0.4
+package_version: 1.13.0
+patience_dynamic_learning_rate: 3
+patience_early_stopping: 10
+predict_last_n: 30
+run_dir: 
+  /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/runs/LSTM_0104_080233
+save_validation_results: true
+save_weights_every: 1
+seed: 42
+seq_length: 365
+static_attributes:
+- aet_mm_syr
+- pet_mm_syr
+- dis_m3_pyr
+- run_mm_syr
+- inu_pc_smx
+- rev_mc_usu
+- gwt_cm_sav
+- ele_mt_sav
+- slp_dg_sav
+- sgr_dk_sav
+- pre_mm_syr
+- ari_ix_sav
+- tmp_dc_syr
+- area
+- aridity_ERA5_LAND
+- high_prec_dur
+- high_prec_freq
+- low_prec_dur
+- low_prec_freq
+- moisture_index_ERA5_LAND
+- p_mean
+- pet_mean_ERA5_LAND
+- seasonality_ERA5_LAND
+target_variables:
+- streamflow
+test_basin_file: 
+  /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/S150_id.txt
+test_end_date: 31/12/2020
+test_start_date: 01/01/2016
+train_basin_file: 
+  /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/S150_id.txt
+train_dir: 
+  /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/runs/LSTM_0104_080233/train_data
+train_end_date: 31/12/2012
+train_start_date: 01/01/1996
+validate_every: 1
+validation_basin_file: 
+  /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/S150_id.txt
+validation_end_date: 31/12/2015
+validation_start_date: 01/01/2013

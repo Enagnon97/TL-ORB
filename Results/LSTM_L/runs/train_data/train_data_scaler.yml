@@ -1,0 +1,114 @@
+attribute_means:
+  aet_mm_syr: 916.1963105833332
+  area: 22729.791230000003
+  ari_ix_sav: 59.49577465000001
+  aridity_ERA5_LAND: 8.213475561666668
+  dis_m3_pyr: 108.51883333333335
+  ele_mt_sav: 269.87148578333336
+  gwt_cm_sav: 150.15528534999999
+  high_prec_dur: 1.1656925343333333
+  high_prec_freq: 0.02710546483333334
+  inu_pc_smx: 0.3421126898333333
+  low_prec_dur: 5.6649524255
+  low_prec_freq: 0.5080312486666667
+  moisture_index_ERA5_LAND: -0.7946845865000002
+  p_mean: 3.4094841746666664
+  pet_mean_ERA5_LAND: 27.94452049666667
+  pet_mm_syr: 1867.8261009999999
+  pre_mm_syr: 1111.00649
+  rev_mc_usu: 12.0
+  run_mm_syr: 182.31899181666665
+  seasonality_ERA5_LAND: 0.5946568944999999
+  sgr_dk_sav: 27.50713555
+  slp_dg_sav: 13.541210406666666
+  tmp_dc_syr: 268.7811189166666
+attribute_stds:
+  aet_mm_syr: 7.792338726173216
+  area: 17285.08511575545
+  ari_ix_sav: 0.3833142482148673
+  aridity_ERA5_LAND: 1.2142023632467354
+  dis_m3_pyr: 76.3857413014148
+  ele_mt_sav: 70.01840181484275
+  gwt_cm_sav: 10.219437955155895
+  high_prec_dur: 0.011266434227938615
+  high_prec_freq: 0.004062919326579864
+  inu_pc_smx: 0.483078258363412
+  low_prec_dur: 0.919272693669131
+  low_prec_freq: 0.027013162455309075
+  moisture_index_ERA5_LAND: 0.010954197252527949
+  p_mean: 0.08238304777765577
+  pet_mean_ERA5_LAND: 3.6793611280152607
+  pet_mm_syr: 40.423746313250994
+  pre_mm_syr: 20.44461048713231
+  rev_mc_usu: 13.145341380123988
+  run_mm_syr: 11.544191674958764
+  seasonality_ERA5_LAND: 0.05643095969638067
+  sgr_dk_sav: 1.6750382303842821
+  slp_dg_sav: 0.6733828103948096
+  tmp_dc_syr: 2.803465837804636
+xarray_feature_scale:
+  coords: {}
+  attrs: {}
+  dims: {}
+  data_vars:
+    potential_evaporation_sum_ERA5_LAND:
+      dims: []
+      attrs: {}
+      data: 14.479106903076172
+    streamflow:
+      dims: []
+      attrs: {}
+      data: 0.788430392742157
+    surface_pressure_mean:
+      dims: []
+      attrs: {}
+      data: 0.7424513697624207
+    temperature_2m_mean:
+      dims: []
+      attrs: {}
+      data: 1.971518874168396
+    total_precipitation_sum:
+      dims: []
+      attrs: {}
+      data: 5.429945468902588
+    u_component_of_wind_10m_mean:
+      dims: []
+      attrs: {}
+      data: 0.5603640079498291
+    v_component_of_wind_10m_mean:
+      dims: []
+      attrs: {}
+      data: 0.7899908423423767
+xarray_feature_center:
+  coords: {}
+  attrs: {}
+  dims: {}
+  data_vars:
+    potential_evaporation_sum_ERA5_LAND:
+      dims: []
+      attrs: {}
+      data: 27.836210250854492
+    streamflow:
+      dims: []
+      attrs: {}
+      data: 0.43272504210472107
+    surface_pressure_mean:
+      dims: []
+      attrs: {}
+      data: 97.97893524169922
+    temperature_2m_mean:
+      dims: []
+      attrs: {}
+      data: 26.78998374938965
+    total_precipitation_sum:
+      dims: []
+      attrs: {}
+      data: 3.395443916320801
+    u_component_of_wind_10m_mean:
+      dims: []
+      attrs: {}
+      data: 0.1301768720149994
+    v_component_of_wind_10m_mean:
+      dims: []
+      attrs: {}
+      data: 0.7698403596878052
