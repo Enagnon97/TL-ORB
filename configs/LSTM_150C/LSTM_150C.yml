@@ -3,17 +3,17 @@
 # --- Experiment configurations ---------------------------------------------------
 
 experiment_name: LSTM
-run_dir : /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/runs
+run_dir : LSTM_150C/runs
 
 # files to specify training, validation and test basins (relative to code root or absolute path)
-train_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/S150_id.txt
-validation_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/S150_id.txt
-test_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_150C/S150_id.txt
+train_basin_file: data/basin_lists/caravan_basin_150_id.txt
+validation_basin_file:  data/basin_lists/caravan_basin_150_id.txt
+test_basin_file:  data/basin_lists/caravan_basin_150_id.txt
 
 # training, validation and test time periods (format = 'dd/mm/yyyy')
-train_start_date: "01/01/1996"
-train_end_date: "31/12/2012"
-validation_start_date: "01/01/2013"
+train_start_date: "01/01/1960"
+train_end_date: "31/12/2010"
+validation_start_date: "01/01/2011"
 validation_end_date: "31/12/2015"
 test_start_date: "01/01/2016"
 test_end_date: "31/12/2020"
@@ -50,7 +50,7 @@ minimum_epochs_before_early_stopping: 20
 patience_early_stopping: 10
 
 # specify learning rates to use starting at specific epochs (0 is the initial learning rate)
-learning_rate: 0.0003
+learning_rate: 0.0005
 
 dynamic_learning_rate: True
 patience_dynamic_learning_rate: 3
@@ -62,9 +62,6 @@ batch_size: 128
 # Number of training epochs
 epochs: 100
 
-# lagged features
-#lagged_features :
-  #streamflow: 1
 
 metrics:
   - NSE
@@ -80,7 +77,6 @@ optimizer: Adam
 # specify loss [MSE, NSE, RMSE]
 loss: MSE
 
-# Defines which time steps are used to calculate the loss. Can't be larger than seq_length.
 # If use_frequencies is used, this needs to be a dict mapping each frequency to a predict_last_n-value, else an int.
 predict_last_n: 30
 
@@ -113,27 +109,12 @@ save_weights_every: 1
 
 #### --------------------- Data configurations ----------------------------------------
 dataset: generic
-data_dir: /content/drive/MyDrive/DeepLearning/PhD/Data/caravan_150basins
+data_dir: <ABSOLUTE_PATH_TO_CARAVAN>
 
 dynamic_inputs:
-  #- surface_pressure_mean
-  #- surface_net_solar_radiation_mean
-  #- u_component_of_wind_10m_mean
-  #- v_component_of_wind_10m_mean
-  #- surface_pressure_min
-  #- surface_net_solar_radiation_min
-  #- temperature_2m_min
-  #- u_component_of_wind_10m_min
-  #- v_component_of_wind_10m_min
-  #- surface_pressure_max
-  #- surface_net_solar_radiation_max
-  #- temperature_2m_max
-  #- u_component_of_wind_10m_max
-  #- v_component_of_wind_10m_max
   - total_precipitation_sum
   - temperature_2m_mean
   - potential_evaporation_sum_ERA5_LAND
-  
 static_attributes:
   - aet_mm_syr
   - pet_mm_syr
@@ -163,4 +144,3 @@ target_variables:
   - streamflow
 clip_targets_to_zero:
   - streamflow
-
