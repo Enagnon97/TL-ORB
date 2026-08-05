@@ -1,0 +1,163 @@
+############################################################################
+##############################################################################
+# --- Experiment configurations ---------------------------------------------------
+
+experiment_name: LSTM_L
+run_dir : /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_L/runs
+
+# files to specify training, validation and test basins (relative to code root or absolute path)
+train_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_L/local_7basins.txt
+validation_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_L/local_7basins.txt
+test_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_L/local_7basins.txt
+
+# training, validation and test time periods (format = 'dd/mm/yyyy')
+train_start_date: "01/01/1996"
+train_end_date: "31/12/2012"
+validation_start_date: "01/01/2013"
+validation_end_date: "31/12/2014"
+test_start_date: "01/01/2015"
+test_end_date: "31/12/2020"
+
+# which GPU (id) to use [in format of cuda:0, cuda:1 etc, or cpu, mps or None]
+device: cuda:0
+
+# --- Model configuration --------------------------------------------------------------------------
+
+# base model type [lstm, ealstm, cudalstm, embcudalstm, mtslstm]
+model: cudalstm    # lstm
+
+# prediction head [regression]. Define the head specific parameters below
+head: regression
+seed: 42
+# ----> Regression settings <----
+output_activation: linear     # this will be changed
+
+####--------- Traning setting configuration ----------------------------------------
+clip_gradient_norm: 0.5
+
+# Number of cell states of the LSTM
+hidden_size: 256
+
+# Initial bias value of the forget gate
+initial_forget_bias: 3
+
+# Dropout applied to the output of the LSTM and internal structure
+output_dropout: 0.5
+
+# early_stopping
+early_stopping: True
+minimum_epochs_before_early_stopping: 20
+patience_early_stopping: 20
+
+# specify learning rates to use starting at specific epochs (0 is the initial learning rate)
+learning_rate: 0.0005
+
+dynamic_learning_rate: True
+patience_dynamic_learning_rate: 3
+factor_dynamic_learning_rate: 0.5
+
+# Mini-batch size
+batch_size: 128
+
+# Number of training epochs
+epochs: 100
+
+metrics:
+  - NSE
+  - KGE
+  - RMSE
+  - Pearson-r
+  - FHV
+  - FLV
+
+# specify optimizer [Adam]
+optimizer: Adam
+
+# specify loss [MSE, NSE, RMSE]
+loss: MSE
+
+# Defines which time steps are used to calculate the loss. Can't be larger than seq_length.
+# If use_frequencies is used, this needs to be a dict mapping each frequency to a predict_last_n-value, else an int.
+predict_last_n: 1
+
+# Length of the input sequence
+# If use_frequencies is used, this needs to be a dict mapping each frequency to a seq_length, else an int.
+seq_length: 365
+
+#Length of the forecast sequence.
+forecast_seq_length: 5
+
+# Number of parallel workers used in the data pipeline
+num_workers: 4
+
+# Log the training loss every n steps
+log_interval: 5
+
+# If true, writes logging results into tensorboard file
+log_tensorboard: True
+
+# If a value and greater than 0, logs n random basins as figures during validation
+log_n_figures: 1
+
+save_validation_results: true
+#save_train_results: true
+cache_validation_data: true
+validate_every: 1
+
+# Save model weights every n epochs
+save_weights_every: 1
+
+#### --------------------- Data configurations ----------------------------------------
+dataset: generic
+data_dir: /content/drive/MyDrive/DeepLearning/PhD/Data/Oueme  #### A REVOIR ####
+
+dynamic_inputs:
+  - surface_pressure_mean
+  #- surface_net_solar_radiation_mean
+  - temperature_2m_mean
+  - u_component_of_wind_10m_mean
+  - v_component_of_wind_10m_mean
+  #- surface_pressure_min
+  #- surface_net_solar_radiation_min
+  #- temperature_2m_min
+  #- u_component_of_wind_10m_min
+  #- v_component_of_wind_10m_min
+  #- surface_pressure_max
+  #- surface_net_solar_radiation_max
+  #- temperature_2m_max
+  #- u_component_of_wind_10m_max
+  #- v_component_of_wind_10m_max
+  - total_precipitation_sum
+  - potential_evaporation_sum_ERA5_LAND
+  
+static_attributes:
+  - aet_mm_syr
+  - pet_mm_syr
+  - dis_m3_pyr
+  - run_mm_syr
+  - inu_pc_smx
+  - rev_mc_usu
+  - gwt_cm_sav
+  - ele_mt_sav
+  - slp_dg_sav
+  - sgr_dk_sav
+  - pre_mm_syr
+  - ari_ix_sav
+  #- clz_cl_smj
+  - tmp_dc_syr
+  - area
+  - aridity_ERA5_LAND
+  - high_prec_dur
+  - high_prec_freq
+  - low_prec_dur
+  - low_prec_freq
+  - moisture_index_ERA5_LAND
+  - p_mean
+  - pet_mean_ERA5_LAND
+  - seasonality_ERA5_LAND
+
+target_variables:
+  - streamflow
+clip_targets_to_zero:
+  - streamflow
+

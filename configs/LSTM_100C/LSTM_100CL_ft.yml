@@ -1,0 +1,57 @@
+# --- Experiment configurations --------------------------------------------------------------------
+
+# experiment name, used as folder name
+experiment_name: LSTM-100CL-ft
+run_dir : /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_100C/runs
+
+# files to specify training, validation and test basins (relative to code root or absolute path)
+train_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_50C/LSTM_L.txt
+validation_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_50C/LSTM_L.txt
+test_basin_file: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_50C/LSTM_L.txt
+
+train_start_date: "01/01/1996"
+train_end_date: "31/12/2012"
+validation_start_date: "01/01/2013"
+validation_end_date: "31/12/2014"
+test_start_date: "01/01/2015"
+test_end_date: "31/12/2020"
+
+#### --------------------- Data configurations ----------------------------------------
+dataset: generic
+data_dir: /content/drive/MyDrive/DeepLearning/PhD/Data/Oueme
+
+# early_stopping
+early_stopping: True
+minimum_epochs_before_early_stopping: 20
+patience_early_stopping: 10
+
+# Dropout applied to the output of the LSTM and internal structure
+output_dropout: 0.4
+
+# specify learning rates to use starting at specific epochs (0 is the initial learning rate)
+learning_rate: 0.001
+
+dynamic_learning_rate: True
+patience_dynamic_learning_rate: 5
+factor_dynamic_learning_rate: 0.5
+
+# Mini-batch size
+batch_size: 64
+
+# Number of training epochs
+epochs: 100
+
+metrics:
+  - NSE
+  - KGE
+  - RMSE
+  - Pearson-r
+  - FHV
+  - FLV
+
+finetune_modules:
+- head
+#- lstm
+
+base_run_dir: /content/drive/MyDrive/DeepLearning/PhD/Codes/LSTM_100C/runs/LSTM_3003_121203
+
