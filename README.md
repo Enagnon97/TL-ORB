@@ -87,7 +87,7 @@ If you use this repository, please cite both the manuscript and this archived re
 
 ```bibtex
 @software{oueme_transfer_learning_2026,
-  author    = {Ahouandjinou, Jérôme Enagnon, Aymar Yaovi Bossa, Jean Hounkpe, Riccardo Taormina},
+  author    = {Ahouandjinou, J.E. and Bossa, Y.A. and Hounkpe, J. and Taormina, R.},
   title     = {A climate similarity-based transfer learning framework using the global Caravan dataset for enhancing streamflow prediction in the Ouémé River Basin (Benin, West Africa)},
   year      = {2026},
   publisher = {Zenodo},
